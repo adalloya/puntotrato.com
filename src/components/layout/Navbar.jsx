@@ -23,7 +23,7 @@ const Navbar = () => {
         <nav className="navbar">
             <div className="container navbar-container">
                 <Link to="/" className="navbar-logo">
-                    <img src="/logo.png" alt="PuntoTrato.com" style={{ height: '40px' }} />
+                    <img src="/logo.png" alt="PuntoTrato.com" />
                 </Link>
 
                 <div className="navbar-toggle" onClick={() => setIsOpen(!isOpen)}>

@@ -55,6 +55,14 @@ const VehicleForm = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
+
+        // Validate at least one photo
+        const uploadedPhotosCount = Object.keys(formData.images).length;
+        if (uploadedPhotosCount === 0) {
+            alert('Por favor sube al menos una foto de tu vehículo para publicarlo.');
+            return;
+        }
+
         console.log('Submitting form:', formData);
         alert('¡Publicación simulada! Los datos se han guardado en consola.');
         // Here we would upload images and save to Firestore
@@ -238,7 +246,7 @@ const VehicleForm = () => {
                         <h2>Fotos del Vehículo</h2>
                         <div className="info-box">
                             <AlertCircle size={20} />
-                            <p>Debes subir las 7 fotos obligatorias para asegurar la transparencia de tu venta.</p>
+                            <p>Te recomendamos subir estas fotos para vender más rápido. Al menos 1 es obligatoria.</p>
                         </div>
 
                         <div className="photo-grid">
@@ -262,7 +270,6 @@ const VehicleForm = () => {
                                             accept="image/*"
                                             onChange={(e) => handleImageChange(field.id, e)}
                                             hidden
-                                            required
                                         />
                                         <label htmlFor={`file-${field.id}`} className="btn-upload">
                                             {previewImages[field.id] ? 'Cambiar Foto' : 'Subir Foto'}

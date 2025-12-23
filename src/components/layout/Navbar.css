@@ -31,6 +31,12 @@
     color: var(--secondary-color);
 }
 
+.navbar-logo img {
+    height: 55px;
+    width: auto;
+    object-fit: contain;
+}
+
 .navbar-links {
     display: flex;
     align-items: center;

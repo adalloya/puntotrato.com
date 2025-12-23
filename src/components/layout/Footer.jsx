@@ -37,6 +37,9 @@ const Footer = () => {
             </div>
             <div className="footer-bottom">
                 <p>&copy; {new Date().getFullYear()} PuntoTrato.com - Todos los derechos reservados.</p>
+                <div className="footer-legal-links">
+                    <Link to="/privacy">Política de Privacidad</Link> | <Link to="/terms">Términos y Condiciones</Link>
+                </div>
             </div>
         </footer>
     );

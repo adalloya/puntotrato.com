@@ -16,7 +16,8 @@ const Register = () => {
     const navigate = useNavigate();
 
     async function handleSubmit(e) {
-        e.preventDefault();
+        if (e) e.preventDefault();
+        console.log("Form submitted via button! Values:", { email, password, confirmPassword });
 
         if (password !== confirmPassword) {
             return setError('Las contraseñas no coinciden.');
@@ -50,7 +51,7 @@ const Register = () => {
 
                     {error && <div className="auth-error"><AlertCircle size={16} /> {error}</div>}
 
-                    <form onSubmit={handleSubmit} className="auth-form">
+                    <div className="auth-form">
                         <div className="input-group">
                             <User className="input-icon" size={20} />
                             <input
@@ -95,10 +96,10 @@ const Register = () => {
                             />
                         </div>
 
-                        <button type="submit" className="btn-primary auth-submit" disabled={loading}>
+                        <button type="button" onClick={handleSubmit} className="btn-primary auth-submit" disabled={loading}>
                             {loading ? 'Creando cuenta...' : <><UserPlus size={20} /> Registrarse</>}
                         </button>
-                    </form>
+                    </div>
 
                     <div className="auth-footer">
                         <p>¿Ya tienes cuenta? <Link to="/login">Inicia sesión</Link></p>

@@ -6,14 +6,16 @@ import './Hero.css';
 const Hero = () => {
     return (
         <section className="hero">
+            <video className="hero-video" autoPlay loop muted playsInline>
+                <source src="/hero-video.mp4" type="video/mp4" />
+            </video>
             <div className="hero-overlay"></div>
             <div className="container hero-content">
                 <h1 className="hero-title">
-                    ¡Bienvenido <span className="highlight-text">parcero</span>!
+                    ¿Buscas <span className="highlight-text">carro</span> o buscas <span className="highlight-text">plata</span>?
                 </h1>
                 <p className="hero-subtitle">
-                    Encuentra tu próxima nave o vende tu gajo al mejor precio.
-                    <br />Sin tanto cuento, rápido y seguro.
+                    PuntoTrato: De una y sin tanta lata.
                 </p>
 
                 <div className="hero-buttons">
@@ -23,7 +25,7 @@ const Hero = () => {
                     </Link>
                     <Link to="/sell" className="hero-btn sell-btn">
                         <Tag size={20} />
-                        Quiero vender mi carro/moto
+                        Quiero vender mi nave
                     </Link>
                 </div>
             </div>

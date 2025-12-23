@@ -20,25 +20,33 @@ export function AuthProvider({ children }) {
     const [loading, setLoading] = useState(true);
 
     async function signup(email, password, name) {
-        if (!auth) throw new Error("Firebase no está configurado. Revisa el archivo .env");
+        if (!auth) throw new Error("Firebase no configurado");
+
+        console.log("Starting signup process...");
         const userCredential = await createUserWithEmailAndPassword(auth, email, password);
         const user = userCredential.user;
+        console.log("User created in Auth:", user.uid);
 
         // Update profile with name
         await updateProfile(user, { displayName: name });
+        console.log("Profile updated.");
 
         // Create user document in Firestore if DB is available
         if (db) {
             try {
+                console.log("Attempting to write to Firestore...");
                 await setDoc(doc(db, 'users', user.uid), {
                     email: user.email,
                     displayName: name,
                     role: 'user',
                     createdAt: new Date().toISOString()
                 });
+                console.log("Firestore write successful.");
             } catch (e) {
                 console.error("Error creando info de usuario en DB:", e);
             }
+        } else {
+            console.log("DB instance is null, skipping Firestore.");
         }
 
         return user;
