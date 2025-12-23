@@ -11,6 +11,10 @@ import VehicleDetail from './pages/VehicleDetail';
 import Terms from './pages/Terms';
 import PrivacyPolicy from './pages/PrivacyPolicy';
 
+import AdminLogin from './pages/admin/AdminLogin';
+import AdminDashboard from './pages/admin/AdminDashboard';
+import AdminRoute from './components/admin/AdminRoute';
+
 function App() {
   return (
     <AuthProvider>
@@ -24,6 +28,14 @@ function App() {
           <Route path="/register" element={<Register />} />
           <Route path="/terms" element={<Terms />} />
           <Route path="/privacy" element={<PrivacyPolicy />} />
+
+          {/* Admin Routes */}
+          <Route path="/admin/login" element={<AdminLogin />} />
+          <Route path="/admin/dashboard" element={
+            <AdminRoute>
+              <AdminDashboard />
+            </AdminRoute>
+          } />
         </Routes>
       </Router>
     </AuthProvider>
