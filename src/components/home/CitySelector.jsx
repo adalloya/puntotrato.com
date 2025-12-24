@@ -2,30 +2,36 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import './CitySelector.css';
 
+import bogotaImg from '../../assets/images/cities/bogota.jpg';
+import medellinImg from '../../assets/images/cities/medellin.jpg';
+import caliImg from '../../assets/images/cities/cali.png';
+import barranquillaImg from '../../assets/images/cities/barranquilla.jpg';
+import popayanImg from '../../assets/images/cities/popayan.jpg';
+
 const cities = [
     {
         name: 'Bogotá D.C.',
-        image: 'https://images.unsplash.com/photo-1571214227814-1d898c62c95e?q=80&w=800&auto=format&fit=crop',
+        image: bogotaImg,
         slug: 'Bogotá D.C.'
     },
     {
         name: 'Medellín',
-        image: 'https://images.unsplash.com/photo-1565518206191-4d008b4791e2?q=80&w=800&auto=format&fit=crop',
+        image: medellinImg,
         slug: 'Antioquia'
     },
     {
         name: 'Cali',
-        image: 'https://images.unsplash.com/photo-1583093952317-0d500735ba70?q=80&w=800&auto=format&fit=crop',
+        image: caliImg,
         slug: 'Valle del Cauca'
     },
     {
         name: 'Barranquilla',
-        image: 'https://images.unsplash.com/photo-1628795856488-84224b8923a1?q=80&w=800&auto=format&fit=crop',
+        image: barranquillaImg,
         slug: 'Atlántico'
     },
     {
         name: 'Popayán',
-        image: 'https://images.unsplash.com/photo-1582294132104-1889098ac20f?q=80&w=800&auto=format&fit=crop',
+        image: popayanImg,
         slug: 'Cauca'
     }
 ];

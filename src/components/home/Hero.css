@@ -77,7 +77,7 @@
 
 .buy-btn {
     background: var(--primary-color);
-    color: var(--text-dark);
+    color: white;
 }
 
 .buy-btn:hover {

@@ -6,7 +6,7 @@ import { Search, Filter } from 'lucide-react';
 import { carBrands, departments } from '../data/catalogs';
 import './Buy.css';
 
-// ... (dummyListings remains unchanged) ...
+import { listings as dummyListings } from '../data/listings';
 
 const Buy = () => {
     const [searchParams] = useSearchParams();

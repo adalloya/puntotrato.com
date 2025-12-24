@@ -12,10 +12,10 @@ const Hero = () => {
             <div className="hero-overlay"></div>
             <div className="container hero-content">
                 <h1 className="hero-title">
-                    ¿Buscas <span className="highlight-text">carro</span> o buscas <span className="highlight-text">plata</span>?
+                    ¿Buscas carro o buscas plata?
                 </h1>
                 <p className="hero-subtitle">
-                    PuntoTrato: De una y sin tanta lata.
+                    De una y sin tanta lata.
                 </p>
 
                 <div className="hero-buttons">

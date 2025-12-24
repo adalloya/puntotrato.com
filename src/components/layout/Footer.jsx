@@ -3,12 +3,16 @@ import { Facebook, Instagram, Twitter, Mail, Phone, MapPin } from 'lucide-react'
 import { Link } from 'react-router-dom';
 import './Footer.css';
 
+import logoImg from '../../assets/images/logo-footer.png';
+
 const Footer = () => {
     return (
         <footer className="footer">
             <div className="container footer-content">
                 <div className="footer-brand">
-                    <img src="/logo.png" alt="PuntoTrato.com" className="footer-logo" />
+                    <Link to="/" className="footer-logo">
+                        <img src={logoImg} alt="PuntoTrato.com" style={{ height: '50px', width: 'auto' }} />
+                    </Link>
                     <p>Tu plataforma de confianza para comprar y vender vehículos en Colombia.</p>
                 </div>
 
