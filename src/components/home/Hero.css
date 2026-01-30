@@ -113,3 +113,24 @@
         justify-content: center;
     }
 }
+
+.hero-buttons-secondary {
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+}
+
+.contract-btn {
+    background: rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: white;
+    font-size: 1rem;
+    padding: 0.8rem 2rem;
+}
+
+.contract-btn:hover {
+    background: white;
+    color: var(--primary-color);
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
