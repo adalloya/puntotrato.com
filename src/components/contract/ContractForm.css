@@ -1,0 +1,388 @@
+/* ContractForm.css */
+
+.contract-container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+    font-family: 'Outfit', sans-serif;
+}
+
+.contract-header {
+    text-align: center;
+    margin-bottom: 2.5rem;
+    animation: fadeIn 0.8s ease-out;
+}
+
+.contract-title {
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin-bottom: 0.5rem;
+    color: var(--primary-color);
+}
+
+.contract-subtitle {
+    color: #666;
+    font-size: 1.1rem;
+}
+
+/* White Panel (Card Style) - Matches VehicleForm */
+.glass-panel {
+    background: white;
+    border-radius: 24px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+    /* Soft shadow */
+    overflow: hidden;
+    position: relative;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+/* Stepper */
+.stepper-container {
+    background: #f8f9fa;
+    /* Light gray */
+    padding: 1.5rem 2rem;
+    border-bottom: 1px solid #eaeaea;
+}
+
+.stepper-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 600px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.stepper-line-bg {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: #e0e0e0;
+    transform: translateY(-50%);
+    z-index: 0;
+}
+
+.stepper-line-progress {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    height: 2px;
+    background: var(--primary-color);
+    transition: width 0.5s ease;
+    transform: translateY(-50%);
+    z-index: 0;
+}
+
+.step-item {
+    position: relative;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+}
+
+.step-circle {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: white;
+    border: 2px solid #e0e0e0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #999;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.step-item.active .step-circle {
+    background: var(--primary-color);
+    border-color: var(--primary-color);
+    color: white;
+    box-shadow: 0 4px 10px rgba(0, 115, 230, 0.3);
+    transform: scale(1.1);
+}
+
+.step-item.completed .step-circle {
+    background: #e6f4ff;
+    /* Light blue */
+    border-color: var(--primary-color);
+    color: var(--primary-color);
+}
+
+.step-label {
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: #999;
+    transition: color 0.3s;
+}
+
+.step-item.active .step-label {
+    color: var(--primary-color);
+    font-weight: 700;
+}
+
+.step-item.completed .step-label {
+    color: var(--primary-color);
+}
+
+/* Form Content */
+.form-content {
+    padding: 2.5rem;
+    min-height: 450px;
+}
+
+.step-content {
+    animation: fadeInUp 0.5s ease-out forwards;
+}
+
+.step-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text-dark);
+    /* Dark Text */
+    margin-bottom: 2rem;
+    display: flex;
+    flex-direction: column;
+    /* Stack icon and text */
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    padding-bottom: 1rem;
+    text-align: center;
+}
+
+.step-icon-wrapper {
+    background: #f0f7ff;
+    padding: 10px;
+    border-radius: 12px;
+    color: var(--primary-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Grid Layout */
+.form-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+}
+
+@media (min-width: 768px) {
+    .form-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 2rem;
+    }
+
+    .form-grid.thirds {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
+
+.col-full {
+    grid-column: 1 / -1;
+}
+
+/* Inputs */
+.input-group {
+    margin-bottom: 0.5rem;
+}
+
+.input-label {
+    display: block;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #444;
+    margin-bottom: 0.6rem;
+    margin-left: 4px;
+}
+
+.input-wrapper {
+    position: relative;
+    transition: transform 0.2s;
+}
+
+.input-icon {
+    position: absolute;
+    left: 14px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #aaa;
+    pointer-events: none;
+    transition: color 0.2s;
+}
+
+.input-field,
+.textarea-field {
+    width: 100%;
+    background: #fff;
+    border: 1px solid #ddd;
+    /* Light border */
+    border-radius: 12px;
+    padding: 14px 16px 14px 46px;
+    color: var(--text-dark);
+    font-size: 1rem;
+    font-family: inherit;
+    transition: all 0.3s;
+}
+
+.input-field:focus,
+.textarea-field:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(0, 115, 230, 0.1);
+}
+
+.input-field:focus+.input-icon,
+.input-wrapper:focus-within .input-icon {
+    color: var(--primary-color);
+}
+
+.textarea-field {
+    padding-left: 16px;
+    resize: vertical;
+}
+
+/* Footer & Buttons */
+.form-footer {
+    background: #f8f9fa;
+    padding: 1.5rem 2.5rem;
+    border-top: 1px solid #eaeaea;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.btn-prev {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #666;
+    font-weight: 600;
+    padding: 10px 20px;
+    border-radius: 12px;
+    transition: all 0.2s;
+}
+
+.btn-prev:hover {
+    background: #eef1f4;
+    color: #333;
+}
+
+.btn-prev:disabled {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.btn-next {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--primary-color);
+    /* Brand Blue */
+    color: white;
+    font-weight: 700;
+    padding: 12px 32px;
+    border-radius: 50px;
+    box-shadow: 0 4px 15px rgba(0, 115, 230, 0.2);
+    transition: all 0.3s;
+}
+
+.btn-next:hover {
+    transform: translateY(-2px);
+    background: var(--primary-dark);
+    box-shadow: 0 8px 25px rgba(0, 115, 230, 0.3);
+}
+
+/* Download Button */
+.download-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 3rem;
+    background: #f0f7ff;
+    border-radius: 16px;
+    border: 1px dashed rgba(0, 115, 230, 0.3);
+    margin-top: 2rem;
+}
+
+.btn-download {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    background: var(--primary-color);
+    color: white;
+    font-weight: 700;
+    font-size: 1.1rem;
+    padding: 18px 48px;
+    border-radius: 50px;
+    text-decoration: none;
+    transition: all 0.3s;
+    box-shadow: 0 10px 20px rgba(0, 115, 230, 0.2);
+}
+
+.btn-download:hover {
+    transform: scale(1.05);
+    background: var(--primary-dark);
+    box-shadow: 0 15px 30px rgba(0, 115, 230, 0.4);
+}
+
+.privacy-note {
+    margin-top: 1.5rem;
+    color: #666;
+    font-size: 0.9rem;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive adjustments */
+@media (max-width: 640px) {
+    .contract-title {
+        font-size: 2rem;
+    }
+
+    .stepper-container {
+        padding: 1rem;
+    }
+
+    .step-label {
+        display: none;
+    }
+
+    /* Hide labels on very small screens if crowded */
+    .step-item.active .step-label {
+        display: block;
+    }
+
+    /* Show active only */
+    .form-content {
+        padding: 1.5rem;
+    }
+}

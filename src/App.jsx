@@ -11,6 +11,8 @@ import VehicleDetail from './pages/VehicleDetail';
 import Terms from './pages/Terms';
 import PrivacyPolicy from './pages/PrivacyPolicy';
 
+import ContractTool from './pages/ContractTool';
+
 import AdminLogin from './pages/admin/AdminLogin';
 import AdminDashboard from './pages/admin/AdminDashboard';
 import AdminRoute from './components/admin/AdminRoute';
@@ -28,6 +30,7 @@ function App() {
           <Route path="/register" element={<Register />} />
           <Route path="/terms" element={<Terms />} />
           <Route path="/privacy" element={<PrivacyPolicy />} />
+          <Route path="/contrato" element={<ContractTool />} />
 
           {/* Admin Routes */}
           <Route path="/admin" element={<Navigate to="/admin/login" replace />} />

@@ -28,6 +28,20 @@ const Hero = () => {
                         Quiero vender mi nave
                     </Link>
                 </div>
+
+                <div className="mt-8 flex justify-center fade-in delay-200">
+                    <Link
+                        to="/contrato"
+                        className="group relative inline-flex items-center gap-2 px-6 py-3 bg-white/10 backdrop-blur-md border border-white/20 rounded-full text-white font-medium hover:bg-white/20 transition-all duration-300 hover:shadow-[0_0_20px_rgba(255,255,255,0.2)]"
+                    >
+                        <span className="bg-gradient-to-r from-accent-primary to-accent-secondary w-2 h-2 rounded-full animate-pulse"></span>
+                        <span>¡Nuevo! Generador de Contrato de Venta Gratis</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="transform group-hover:translate-x-1 transition-transform">
+                            <path d="M5 12h14"></path>
+                            <path d="m12 5 7 7-7 7"></path>
+                        </svg>
+                    </Link>
+                </div>
             </div>
         </section>
     );
